@@ -1,0 +1,7 @@
+.carousel-inner img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+    height: 100px; /* Maintain the image's aspect ratio */
+    display: block; /* Ensure proper rendering */
+    margin: 0 auto; /* Center the image horizontally */
+    padding: 10px;
+}
