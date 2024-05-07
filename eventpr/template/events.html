@@ -7,14 +7,16 @@ Events
 {%block content%}
 <h2 class="text-center"><b>EVENTS</b></h2>
 <div class="container">
+    {% for i in eve %}
     <div class="card text-center" style="width: 18rem; display:inline-block;margin: 20px;">
-        <img src="{% static 'images/img6.jpg' %}" class="card-img-top" alt="..." height="150px" width="200px">
+        <img src="{{i.img.url}}" class="card-img-top" alt="..." height="150px" width="200px">
         <div class="card-body">
-          <h5 class="card-title"><b>DJ Nights</b></h5>
-          <p class="card-text">"Where the party never stops!"</p>
+          <h5 class="card-title"><b>{{i.name}}</b></h5>
+          <p class="card-text">{{i.desc}}</p>
         </div>
         </div>
-    <div class="card text-center" style="width: 18rem; display:inline-block;margin: 20px;">
+        {% endfor %}
+   <!-- <div class="card text-center" style="width: 18rem; display:inline-block;margin: 20px;">
             <img src="{% static 'images/corperate.jpg' %}" class="card-img-top" alt="..." height="150px" width="200px">
             <div class="card-body">
               <h5 class="card-title"><b>Corporate Conferences</b></h5>
@@ -27,7 +29,7 @@ Events
                   <h5 class="card-title"><b>Wedding</b></h5>
                   <p class="card-text">
                     "Celebrate love and special moments with us!"</p>
-                </div>
+                </div>-->
 </div>
 
 {% endblock %}

@@ -4,4 +4,4 @@ from django.db import models
 class Event(models.Model):
     img=models.ImageField(upload_to="pic")
     name=models.CharField(max_length=50)
-    desc=models.CharField(max_length=50)
+    desc=models.CharField(max_length=100)
