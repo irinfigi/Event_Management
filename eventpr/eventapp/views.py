@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Event
+from .forms import BookingForm
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -13,4 +14,8 @@ def events(request):
 def contact(request):
     return render(request,'contact.html')
 def booking(request):
-    return render(request,'booking.html')
+    form=BookingForm()
+    dict_form={
+        'form':form
+    }
+    return render(request,'booking.html',dict_form)
