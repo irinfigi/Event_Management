@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.shortcuts import redirect
 
@@ -27,3 +27,21 @@ def user(request):
              return redirect('register/')
 
     return render(request,'reg.html')
+def login(request):
+    if request.method=='POST':
+        username=request.POST.get('username')
+        password=request.POST.get('password')
+        user=auth.authenticate(username=username,password=password)
+        if user is not None:
+            auth.login(request,user)
+            messages.info(request,"Login Success")
+            return redirect('/')
+        else:
+            messages.info(request,"Invalid")
+            return redirect('register/')
+        
+        
+    return render(request,'log.html')
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
