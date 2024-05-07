@@ -17,6 +17,7 @@ def booking(request):
     if request.method=='POST':
         form=BookingForm(request.POST)
         if form.is_valid():
+            form.save()
             return redirect('/')
 
     form=BookingForm()
